@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">-->
+    <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8">-->
+
+    <title>全民城管APP下载</title>
+    <style>
+        html,body{
+            width:100%;
+            height:100%
+        }
+        body{
+
+            background-image: url("images/全民城管-源文件.png");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        *{
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            -webkit-tap-highlight-color:transparent;
+        }
+
+        .backView{
+            width: 140px;
+            height: 140px;
+            margin-top: 380px;
+            position:absolute;
+            left:50%;
+            margin-left: -140px;
+
+        }
+        .downBack{
+            width: 300px;
+            height: 300px;
+            margin-top: 880px;
+            position:absolute;
+            left:50%;
+            margin-left: -150px;
+            font-size: 30px;
+            color: #20b5e5;
+        }
+        /*.downBack img{*/
+        /*width: 358px;*/
+        /*height: 86px;*/
+        /*!*background: red;*!*/
+        /*border-radius: 10px;*/
+        /*}*/
+
+        .downstart{
+            width: 300px;
+            height: 300px;
+            margin-top: 1080px;
+            position:absolute;
+            left:50%;
+            margin-left: -150px;
+            font-size: 30px;
+            color: #a4a9a5;
+        }
+        /*.downstart img{*/
+        /*width: 358px;*/
+        /*height: 86px;*/
+        /*!*background: red;*!*/
+        /*border-radius: 10px;*/
+        /*}*/
+
+        .wxtip{background: rgba(0,0,0,0.8); text-align: center; position: fixed; left:0; top: 0; width: 100%; height: 100%; z-index: 998; display: none;}
+        .wxtip-icon{width: 52px; height: 67px; background: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1537442806027&di=70d400d6ec3c7befda5dccff28cf9971&imgtype=0&src=http%3A%2F%2Fpic.51yuansu.com%2Fpic2%2Fcover%2F00%2F35%2F00%2F58118a1a2b0e2_610.jpg") no-repeat; display: block; position: absolute; right: 20px; top: 20px;}
+        .wxtip-txt{margin-top: 107px; color: #fff; font-size: 16px; line-height: 1.5;}
+    </style>
+
+</head>
+<body>
+
+
+<script type="text/javascript">
+
+    // var scale = 1 / devicePixelRatio;
+    // document.querySelector('meta[name="viewport"]').setAttribute('content','initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+    // if(document.documentElement.clientWidth/devicePixelRatio<=414){
+    //     document.documentElement.style.fontSize = document.documentElement.clientWidth / 10 + 'px';
+    // }else if(document.documentElement.clientWidth>=1136&&document.documentElement.clientWidth<=2208){//5s 6s横屏
+    //     document.documentElement.style.fontSize = '108px';
+    // }else if(document.documentElement.clientWidth>2208){
+    //     document.documentElement.style.fontSize = '54px';
+    // }else{
+    //     document.documentElement.style.fontSize = document.documentElement.clientWidth / 10 + 'px';
+    // }
+    //
+    // window.addEventListener("resize", function() {
+    //     window.location.reload()
+    // },false)
+
+
+    function  buttonclick(){
+
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+
+        if (isAndroid){
+            window.location.href = "cmt://splash";
+            // setTimeout(function(){
+            //
+            //     window.location.href = "http://122.13.1.235:8081/SCPI/update/android/SCMAPInspect/SCMAPublicInspect.apk";
+            //     // alert("开始下载")
+            // },2000)
+
+        }
+        if (isiOS){
+            alert("iOS暂无此功能")
+        }
+    }
+
+    function  downclick(){
+
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+
+        if (isAndroid){
+            // window.location.href = "http://122.13.1.235:8081/SCPI/newview/app/download/downloadapk.jsp/SCMAPublicInspect.apk";
+
+            window.location.href = "http://122.13.1.235:8081/SCPI/update/android/SCMAPInspect/SCMAPublicInspect.apk";
+            // alert("开始下载")
+        }
+        if (isiOS){
+            alert("iOS暂无此功能")
+        }
+    }
+
+
+    function weixinTip(ele){
+        var ua = navigator.userAgent;
+        var isWeixin = !!/MicroMessenger/i.test(ua);
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+
+        if(isWeixin){
+
+            if (isAndroid){
+                ele.onclick=function(e){
+                    window.event? window.event.returnValue = false : e.preventDefault();
+                    document.getElementById('JweixinTip').style.display='block';
+                }
+                document.getElementById('JweixinTip').onclick=function(){
+                    this.style.display='none';
+                }
+            }
+
+
+        }
+    }
+    var btn1 = document.getElementById('JdownApp');//下载一
+    weixinTip(btn1);
+    var btn2 = document.getElementById('JdownApp2'); //下载二
+    weixinTip(btn2);
+
+
+
+
+</script>
+
+<!--http://pic.caibaojian.com/uploads/2016/01/weixin-tip.png-->
+
+<!--<a href="http://caibaojian.com/test.apk" id="JdownApp">点击下载APP</a>-->
+<!--<a href="http://caibaojian.com/test.apk" id="JdownApp2" class="btn-warn">点击下载APP2</a>-->
+<div class="wxtip" id="JweixinTip">
+    <span class="wxtip-icon"></span>
+    <p class="wxtip-txt">点击右上角<br/>选择在浏览器中打开</p>
+</div>
+
+
+
+<div class="backView">
+
+    <img src="images/全民城管-源文件_03.png"  class="icon">
+</div>
+
+<div class="downBack">
+    还未下载APP？
+    <a  onclick="downclick()" id="JdownApp">
+        <img src="images/全民城管-源文件_07.png" alt="">
+    </a>
+</div>
+
+
+<div class="downstart">
+    已经下载APP
+    <a onclick="buttonclick()" id="JdownApp2">
+        <img src="images/全民城管-源文件_10.png" alt="" >
+
+    </a>
+
+</div>
+
+
+
+</body>
+</html>
