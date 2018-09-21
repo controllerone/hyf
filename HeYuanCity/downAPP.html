@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">-->
+    <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8">-->
+
+    <title>河源全民城管APP下载</title>
+    <style>
+        html,body{
+            width:100%;
+            height:100%
+        }
+        body{
+
+            background-image: url("images/全民城管-源文件.png");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        *{
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            -webkit-tap-highlight-color:transparent;
+        }
+
+        .iconPic{
+            width: 45%;
+            margin-top: 37%;
+            position:absolute;
+            left:50%;
+            margin-left: -22.5%;
+            /*height: 100%;*/
+        }
+
+
+        .downBack{
+            width: 50%;
+            height: 50px;
+            margin-top: 89%;
+            margin-left: 25%;
+            position:absolute;
+            /*left:50%;*/
+            /*margin-left: -150px;*/
+            font-size: 43px;
+            color: #20b5e5;
+        }
+        .picOne{
+            width: 50%;
+            margin-top: 96%;
+            position:absolute;
+            left:50%;
+            margin-left: -25%;
+
+        }
+
+
+
+        .downstart{
+            width: 300px;
+            height: 50px;
+            margin-top: 111%;
+            position:absolute;
+
+            margin-left: 25%;
+            font-size: 43px;
+            color: #a4a9a5;
+        }
+
+        .picTwo{
+            width: 50%;
+            margin-top: 118%;
+            position:absolute;
+            left:50%;
+            margin-left: -25%;
+
+
+        }
+
+        .imageGo{
+            max-width: 100%;
+            height: auto;
+        }
+
+
+
+
+    </style>
+
+</head>
+<body>
+
+
+<script type="text/javascript">
+    var u = navigator.userAgent;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    var isWeixin = !!/MicroMessenger/i.test(u);
+
+
+
+
+
+
+    // function is_weixin() {
+    //     var ua = navigator.userAgent.toLowerCase();
+    //     if (ua.match(/MicroMessenger/i) == "micromessenger") {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
+    // var isWeixin = is_weixin();
+    var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight;
+    function loadHtml(){
+        var div = document.createElement('div');
+        div.id = 'weixin-tip';
+        div.innerHTML = '<p><img class="imageGo" src="images/live_weixin.png" alt="微信打开"/></p>';
+        document.body.appendChild(div);
+    }
+
+    function loadStyleText(cssText) {
+        var style = document.createElement('style');
+        style.rel = 'stylesheet';
+        style.type = 'text/css';
+        try {
+            style.appendChild(document.createTextNode(cssText));
+        } catch (e) {
+            style.styleSheet.cssText = cssText; //ie9以下
+        }
+        var head=document.getElementsByTagName("head")[0]; //head标签之间加上style样式
+        head.appendChild(style);
+    }
+
+    var cssText = "#weixin-tip{position: fixed; left:0; top:0; background: rgba(0,0,0,0.8); filter:alpha(opacity=80); width: 100%; height:100%; z-index: 100;} #weixin-tip p{text-align: center; margin-top: 10%; padding:0 5%;}";
+
+    // if (isAndroid){
+    //     if(isWeixin){
+    //         loadHtml();
+    //         loadStyleText(cssText);
+    //     }
+    // }
+
+
+
+    function  buttonclick(){
+
+        if (isAndroid){
+
+            if(isWeixin){
+                loadHtml();
+                loadStyleText(cssText);
+            }else {
+                window.location.href = "cmt://splash";
+            }
+
+        }
+        if (isiOS){
+            alert("iOS暂无此功能")
+        }
+    }
+
+    function  downclick(){
+        if (isAndroid){
+            if(isWeixin){
+                loadHtml();
+                loadStyleText(cssText);
+            }else {
+
+                window.location.href = "http://122.13.1.235:8081/SCPI/update/android/SCMAPInspect/SCMAPublicInspect.apk";
+
+            }
+        }
+        if (isiOS){
+            alert("iOS暂无此功能")
+        }
+    }
+
+
+
+</script>
+
+<img src="images/全民城管-源文件_03.png"  class="iconPic">
+
+
+
+
+<div class="downBack">
+    还未下载APP？
+</div>
+<a  onclick="downclick()">
+    <img src="images/全民城管-源文件_07.png" alt="" class="picOne">
+</a>
+
+
+<div class="downstart">
+    已经下载APP
+
+
+
+</div>
+<a onclick="buttonclick()">
+    <img src="images/全民城管-源文件_10.png" alt="" class="picTwo">
+
+</a>
+
+
+</body>
